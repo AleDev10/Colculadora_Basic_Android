@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html{
+  font-size: 70%;
+}
+main{
+  min-width: 300px;
+  max-width: 100vw;
+  height: 100vh;
+}
+
+/*estilização da segunda pagina*/
+#secundHome {
+  background-color: #232323;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 2fr 2fr;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#cabecalho {
+  background-color: white;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+  color: #232323;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+}
+#botao_dev {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+}
+#icon {
+  width: 30%;
+}
+#saidas {
+  color: #232323;
+  margin-right: 5%;
+  margin-bottom: 15%;
+}
+#saida1 {
+  font-size: 2.5rem;
+  text-align: right;
+  font-weight: bold;
+  line-height: 100%;
+  background-color: #ff3f44;
+}
+#saida2 {
+  font-size: 2rem;
+  text-align: right;
+  font-weight: normal;
+  line-height: 100%;
+  margin-top: -5%;
+  background-color: #ff3f44;
+}
+#corpo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  padding: 5%;
+}
+#botao_acao {
+  background-color: white;
+  border: none;
+  border-radius: 20%;
+  margin: 5%;
+  font-size: 3rem;
+}
+#botao_acao:hover {
+  background-color: rgb(192, 192, 192);
+}
+#apagar {
+  width: 50%;
+}
+.btres {
+  color: #ff3f44;
+  font-weight: bold;
+}
+
+/*estilização da segunda pagina*/
+#secundDev {
+  background-color: #232323;
+  width: 390px;
+  height: 844px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#superior {
+  background-color: white;
+  height: 200px;
+  border-bottom-left-radius: 100px;
+  border-end-end-radius: 100px;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+#voltar{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+}
+#logo{
+    width: 400px;
+    height: 100px;
+    transform: translateY(30px);
+}
+#centro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#dilema{
+    margin-top: 150px;
+}
+#rodape{
+    margin-top: 250px;
+    display: flex;
+    justify-content: center;
+}
