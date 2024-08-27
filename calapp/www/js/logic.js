@@ -34,10 +34,11 @@ function pagina_home() {
     })
     superior.appendChild(bt_voltar);
     var icon_voltar=document.createElement("img");
-    icon_voltar.setAttribute("src","/calculadorapp/www/icone/voltar1.png")
+    icon_voltar.setAttribute("src","/calapp/www/icone/voltar1.png");
+    icon_voltar.setAttribute("id", "icone_voltar");
     bt_voltar.appendChild(icon_voltar);
     var logo_txt=document.createElement("img");
-    logo_txt.setAttribute("src","/calculadorapp/www/icone/txt.png")
+    logo_txt.setAttribute("src","/calapp/www/icone/txt.png");
     logo_txt.setAttribute("id", "logo");
     superior.appendChild(logo_txt);
 
@@ -50,24 +51,28 @@ function pagina_home() {
     centro.appendChild(foto);
     var foto_dev=document.createElement("img");
     foto_dev.setAttribute("id","fotodev")
-    foto_dev.setAttribute("src","/calculadorapp/www/img/fotodev.png");
+    foto_dev.setAttribute("src","/calapp/www/img/fotodev.png");
     foto.appendChild(foto_dev);
     var titulo = document.createElement("div");
     titulo.setAttribute("id", "titulo");
     centro.appendChild(titulo);
     var titulo_dev=document.createElement("img");
-    titulo_dev.setAttribute("src","/calculadorapp/www/icone/titulo.png");
+    titulo_dev.setAttribute("src","/calapp/www/icone/titulo.png");
+    titulo_dev.setAttribute("id", "titulo_dev");
     titulo.appendChild(titulo_dev);
     var assinatura = document.createElement("div");
+    assinatura.setAttribute("id", "assinatura");
     centro.appendChild(assinatura);
     var foto_assina=document.createElement("img");
-    foto_assina.setAttribute("src","/calculadorapp/www/icone/nome.png");
+    foto_assina.setAttribute("id", "fotoassina");
+    foto_assina.setAttribute("src","/calapp/www/icone/nome.png");
     assinatura.appendChild(foto_assina);    
     var dilema = document.createElement("div");
     dilema.setAttribute("id","dilema");
     centro.appendChild(dilema);
     var dilematxt=document.createElement("img");
-    dilematxt.setAttribute("src","/calculadorapp/www/img/dilema.png");
+    dilematxt.setAttribute("src","/calapp/www/img/dilema.png");
+    dilematxt.setAttribute("id","dilematxt");
     dilema.appendChild(dilematxt);    
 
 
@@ -79,7 +84,8 @@ function pagina_home() {
     rodape.setAttribute("id", "rodape");
     inferior.appendChild(rodape);
     var rodape_txt=document.createElement("img");
-    rodape_txt.setAttribute("src","/calculadorapp/www/img/rodape.png");
+    rodape_txt.setAttribute("id", "rodapetxt");
+    rodape_txt.setAttribute("src","/calapp/www/img/rodape.png");
     rodape.appendChild(rodape_txt); 
   }
 
@@ -106,11 +112,11 @@ function pagina_home() {
   let saidas = document.createElement("div");
   saidas.setAttribute("id", "saidas");
   cabecalho.appendChild(saidas);
-  var output1 = document.createElement("p");
+  var output1 = document.createElement("input");
   output1.setAttribute("id", "saida1");
   saidas.appendChild(output1);
   output1.innerHTML = "100+50";
-  var output2 = document.createElement("p");
+  var output2 = document.createElement("input");
   output2.setAttribute("id", "saida2");
   saidas.appendChild(output2);
   output2.innerHTML = "150";
@@ -123,7 +129,7 @@ function pagina_home() {
   //funcionalidades
   function adicionarCaracter(x) {
     console.log(x);
-    if (contagemAddCaracter < 22) {
+    if (contagemAddCaracter < 222) {
       contagemAddCaracter++;
       console.log(contagemAddCaracter);
       if (travaCaracter == true) {
@@ -133,7 +139,7 @@ function pagina_home() {
         travaCaracter = false;
         console.log(travaCaracter);
       } else {
-        output2.innerHTML += x;
+        output2.value += x;
         console.log(travaCaracter);
       }
     } else {
@@ -149,7 +155,7 @@ function pagina_home() {
 
   function sinal(a) {
     console.log(output1.innerHTML.length);
-    if (output1.innerHTML.length > 10) {
+    if (output1.innerHTML.length > 100) {
       output1.style.fontSize = "50px";
       if (contador == 0) {
         output1.innerHTML = output2.innerHTML + a;
@@ -184,8 +190,8 @@ function pagina_home() {
   }
 
   function apagarTela() {
-    output1.innerHTML = "";
-    output2.innerHTML = "";
+    output1.value = "";
+    output2.value = "";
     console.log("apagar tudo da tela");
     contador = 0;
   }
@@ -222,6 +228,7 @@ function pagina_home() {
   corpo.appendChild(botao_ac);
   let botao_expo = document.createElement("button");
   botao_expo.setAttribute("id", "botao_acao");
+  botao_expo.setAttribute("class", "btcor");
   botao_expo.addEventListener("click", () => {
     sinal("**");
   });
@@ -229,6 +236,7 @@ function pagina_home() {
   corpo.appendChild(botao_expo);
   let botao_perce = document.createElement("button");
   botao_perce.setAttribute("id", "botao_acao");
+  botao_perce.setAttribute("class", "btcor");
   botao_perce.addEventListener("click", () => {
     sinal("%");
   });
@@ -236,6 +244,7 @@ function pagina_home() {
   corpo.appendChild(botao_perce);
   let botao_divisao = document.createElement("button");
   botao_divisao.setAttribute("id", "botao_acao");
+  botao_divisao.setAttribute("class", "btcor");
   botao_divisao.addEventListener("click", () => {
     sinal("/");
   });
@@ -243,6 +252,7 @@ function pagina_home() {
   corpo.appendChild(botao_divisao);
   let botao_7 = document.createElement("button");
   botao_7.setAttribute("id", "botao_acao");
+  botao_7.setAttribute("class", "btcor");
   botao_7.addEventListener("click", () => {
     adicionarCaracter("7");
   });
@@ -250,6 +260,7 @@ function pagina_home() {
   corpo.appendChild(botao_7);
   let botao_8 = document.createElement("button");
   botao_8.setAttribute("id", "botao_acao");
+  botao_8.setAttribute("class", "btcor");
   botao_8.addEventListener("click", () => {
     adicionarCaracter("8");
   });
@@ -257,6 +268,7 @@ function pagina_home() {
   corpo.appendChild(botao_8);
   let botao_9 = document.createElement("button");
   botao_9.setAttribute("id", "botao_acao");
+  botao_9.setAttribute("class", "btcor");
   botao_9.addEventListener("click", () => {
     adicionarCaracter("9");
   });
@@ -264,6 +276,7 @@ function pagina_home() {
   corpo.appendChild(botao_9);
   let botao_x = document.createElement("button");
   botao_x.setAttribute("id", "botao_acao");
+  botao_x.setAttribute("class", "btcor");
   botao_x.addEventListener("click", () => {
     sinal("*");
   });
@@ -271,6 +284,7 @@ function pagina_home() {
   corpo.appendChild(botao_x);
   let botao_4 = document.createElement("button");
   botao_4.setAttribute("id", "botao_acao");
+  botao_4.setAttribute("class", "btcor");
   botao_4.addEventListener("click", () => {
     adicionarCaracter("4");
   });
@@ -278,6 +292,7 @@ function pagina_home() {
   corpo.appendChild(botao_4);
   let botao_5 = document.createElement("button");
   botao_5.setAttribute("id", "botao_acao");
+  botao_5.setAttribute("class", "btcor");
   botao_5.addEventListener("click", () => {
     adicionarCaracter("5");
   });
@@ -285,12 +300,14 @@ function pagina_home() {
   corpo.appendChild(botao_5);
   let botao_6 = document.createElement("button");
   botao_6.setAttribute("id", "botao_acao");
+  botao_6.setAttribute("class", "btcor");
   botao_6.addEventListener("click", () => {
     adicionarCaracter("6");
   });
   botao_6.innerHTML = "6";
   corpo.appendChild(botao_6);
   let botao_menos = document.createElement("button");
+  botao_menos.setAttribute("class", "btcor");
   botao_menos.setAttribute("id", "botao_acao");
   botao_menos.addEventListener("click", () => {
     sinal("-");
@@ -299,6 +316,7 @@ function pagina_home() {
   corpo.appendChild(botao_menos);
   let botao_1 = document.createElement("button");
   botao_1.setAttribute("id", "botao_acao");
+  botao_1.setAttribute("class", "btcor");
   botao_1.addEventListener("click", () => {
     adicionarCaracter("1");
   });
@@ -306,6 +324,7 @@ function pagina_home() {
   corpo.appendChild(botao_1);
   let botao_2 = document.createElement("button");
   botao_2.setAttribute("id", "botao_acao");
+  botao_2.setAttribute("class", "btcor");
   botao_2.addEventListener("click", () => {
     adicionarCaracter("2");
   });
@@ -313,6 +332,7 @@ function pagina_home() {
   corpo.appendChild(botao_2);
   let botao_3 = document.createElement("button");
   botao_3.setAttribute("id", "botao_acao");
+  botao_3.setAttribute("class", "btcor");
   botao_3.addEventListener("click", () => {
     adicionarCaracter("3");
   });
@@ -320,6 +340,7 @@ function pagina_home() {
   corpo.appendChild(botao_3);
   let botao_mais = document.createElement("button");
   botao_mais.setAttribute("id", "botao_acao");
+  botao_mais.setAttribute("class", "btcor");
   botao_mais.addEventListener("click", () => {
     sinal("+");
   });
@@ -327,6 +348,7 @@ function pagina_home() {
   corpo.appendChild(botao_mais);
   let botao_0 = document.createElement("button");
   botao_0.setAttribute("id", "botao_acao");
+  botao_0.setAttribute("class", "btcor");
   botao_0.addEventListener("click", () => {
     adicionarCaracter("0");
   });
@@ -334,6 +356,7 @@ function pagina_home() {
   corpo.appendChild(botao_0);
   let botao_pont = document.createElement("button");
   botao_pont.setAttribute("id", "botao_acao");
+  botao_pont.setAttribute("class", "btcor");
   botao_pont.addEventListener("click", () => {
     adicionarCaracter(".");
   });
