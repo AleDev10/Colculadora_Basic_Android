@@ -34,11 +34,11 @@ function pagina_home() {
     })
     superior.appendChild(bt_voltar);
     var icon_voltar=document.createElement("img");
-    icon_voltar.setAttribute("src","/calapp/www/icone/voltar1.png");
+    icon_voltar.setAttribute("src","./icone/voltar1.png");
     icon_voltar.setAttribute("id", "icone_voltar");
     bt_voltar.appendChild(icon_voltar);
     var logo_txt=document.createElement("img");
-    logo_txt.setAttribute("src","/calapp/www/icone/txt.png");
+    logo_txt.setAttribute("src","./icone/txt.png");
     logo_txt.setAttribute("id", "logo");
     superior.appendChild(logo_txt);
 
@@ -51,13 +51,13 @@ function pagina_home() {
     centro.appendChild(foto);
     var foto_dev=document.createElement("img");
     foto_dev.setAttribute("id","fotodev")
-    foto_dev.setAttribute("src","/calapp/www/img/fotodev.png");
+    foto_dev.setAttribute("src","./img/fotodev.png");
     foto.appendChild(foto_dev);
     var titulo = document.createElement("div");
     titulo.setAttribute("id", "titulo");
     centro.appendChild(titulo);
     var titulo_dev=document.createElement("img");
-    titulo_dev.setAttribute("src","/calapp/www/icone/titulo.png");
+    titulo_dev.setAttribute("src","./icone/titulo.png");
     titulo_dev.setAttribute("id", "titulo_dev");
     titulo.appendChild(titulo_dev);
     var assinatura = document.createElement("div");
@@ -65,13 +65,13 @@ function pagina_home() {
     centro.appendChild(assinatura);
     var foto_assina=document.createElement("img");
     foto_assina.setAttribute("id", "fotoassina");
-    foto_assina.setAttribute("src","/calapp/www/icone/nome.png");
+    foto_assina.setAttribute("src","./icone/nome.png");
     assinatura.appendChild(foto_assina);    
     var dilema = document.createElement("div");
     dilema.setAttribute("id","dilema");
     centro.appendChild(dilema);
     var dilematxt=document.createElement("img");
-    dilematxt.setAttribute("src","/calapp/www/img/dilema.png");
+    dilematxt.setAttribute("src","./img/dilema.png");
     dilematxt.setAttribute("id","dilematxt");
     dilema.appendChild(dilematxt);    
 
@@ -85,7 +85,7 @@ function pagina_home() {
     inferior.appendChild(rodape);
     var rodape_txt=document.createElement("img");
     rodape_txt.setAttribute("id", "rodapetxt");
-    rodape_txt.setAttribute("src","/calapp/www/img/rodape.png");
+    rodape_txt.setAttribute("src","./img/rodape.png");
     rodape.appendChild(rodape_txt); 
   }
 
