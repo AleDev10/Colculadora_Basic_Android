@@ -46,31 +46,34 @@ main {
   margin-right: 5%;
   padding: 2%;
   margin-bottom: 15%;
-  background-color: aqua;
+  background-color: transparent;
   width: 85%;
 }
 #saida1 {
-  font-size: 2rem;
+  font-size: 3rem;
   text-align: right;
   font-weight: bold;
-  background-color: #cde020;
+  background-color: transparent;
   min-height: 35px;
   width: 100%;
   margin-bottom: 2px;
   display: block;
   border: none;
   outline: none;
+  color: #232323;
+  margin-bottom: -6px;
 }
 #saida2 {
   font-size: 1.9rem;
   text-align: right;
   font-weight: normal;
-  background-color: #ff3f44;
+  background-color: transparent;
   min-height: 30px;
   width: 100%;
   display: block;
   border: none;
   outline: none;
+  color: #232323;
 }
 #corpo {
   display: grid;

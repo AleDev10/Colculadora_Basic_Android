@@ -25,20 +25,20 @@ function pagina_home() {
     var superior = document.createElement("div");
     superior.setAttribute("id", "superior");
     secund_dev.appendChild(superior);
-    var bt_voltar=document.createElement("button");
+    var bt_voltar = document.createElement("button");
     bt_voltar.setAttribute("id", "voltar");
-    bt_voltar.addEventListener("click", function() {
-        console.log("de volta a home");
-        main.removeChild(secund_dev);
-        pagina_home()
-    })
+    bt_voltar.addEventListener("click", function () {
+      console.log("de volta a home");
+      main.removeChild(secund_dev);
+      pagina_home();
+    });
     superior.appendChild(bt_voltar);
-    var icon_voltar=document.createElement("img");
-    icon_voltar.setAttribute("src","./icone/voltar1.png");
+    var icon_voltar = document.createElement("img");
+    icon_voltar.setAttribute("src", "./icone/voltar1.png");
     icon_voltar.setAttribute("id", "icone_voltar");
     bt_voltar.appendChild(icon_voltar);
-    var logo_txt=document.createElement("img");
-    logo_txt.setAttribute("src","./icone/txt.png");
+    var logo_txt = document.createElement("img");
+    logo_txt.setAttribute("src", "./icone/txt.png");
     logo_txt.setAttribute("id", "logo");
     superior.appendChild(logo_txt);
 
@@ -49,32 +49,31 @@ function pagina_home() {
     var foto = document.createElement("div");
     foto.setAttribute("id", "foto");
     centro.appendChild(foto);
-    var foto_dev=document.createElement("img");
-    foto_dev.setAttribute("id","fotodev")
-    foto_dev.setAttribute("src","./img/fotodev.png");
+    var foto_dev = document.createElement("img");
+    foto_dev.setAttribute("id", "fotodev");
+    foto_dev.setAttribute("src", "./img/fotodev.png");
     foto.appendChild(foto_dev);
     var titulo = document.createElement("div");
     titulo.setAttribute("id", "titulo");
     centro.appendChild(titulo);
-    var titulo_dev=document.createElement("img");
-    titulo_dev.setAttribute("src","./icone/titulo.png");
+    var titulo_dev = document.createElement("img");
+    titulo_dev.setAttribute("src", "./icone/titulo.png");
     titulo_dev.setAttribute("id", "titulo_dev");
     titulo.appendChild(titulo_dev);
     var assinatura = document.createElement("div");
     assinatura.setAttribute("id", "assinatura");
     centro.appendChild(assinatura);
-    var foto_assina=document.createElement("img");
+    var foto_assina = document.createElement("img");
     foto_assina.setAttribute("id", "fotoassina");
-    foto_assina.setAttribute("src","./icone/nome.png");
-    assinatura.appendChild(foto_assina);    
+    foto_assina.setAttribute("src", "./icone/nome.png");
+    assinatura.appendChild(foto_assina);
     var dilema = document.createElement("div");
-    dilema.setAttribute("id","dilema");
+    dilema.setAttribute("id", "dilema");
     centro.appendChild(dilema);
-    var dilematxt=document.createElement("img");
-    dilematxt.setAttribute("src","./img/dilema.png");
-    dilematxt.setAttribute("id","dilematxt");
-    dilema.appendChild(dilematxt);    
-
+    var dilematxt = document.createElement("img");
+    dilematxt.setAttribute("src", "./img/dilema.png");
+    dilematxt.setAttribute("id", "dilematxt");
+    dilema.appendChild(dilematxt);
 
     //parte inferior
     var inferior = document.createElement("div");
@@ -83,10 +82,10 @@ function pagina_home() {
     var rodape = document.createElement("div");
     rodape.setAttribute("id", "rodape");
     inferior.appendChild(rodape);
-    var rodape_txt=document.createElement("img");
+    var rodape_txt = document.createElement("img");
     rodape_txt.setAttribute("id", "rodapetxt");
-    rodape_txt.setAttribute("src","./img/rodape.png");
-    rodape.appendChild(rodape_txt); 
+    rodape_txt.setAttribute("src", "./img/rodape.png");
+    rodape.appendChild(rodape_txt);
   }
 
   //começo da primeira pagina
@@ -124,67 +123,70 @@ function pagina_home() {
   //aria de variáveis
   var contador = 0;
   var travaCaracter = false;
-  var contagemAddCaracter = 0;
+  var trava_porce = false;
+  var porce = 0;
 
   //funcionalidades
   function adicionarCaracter(x) {
     console.log(x);
-    if (contagemAddCaracter < 222) {
-      contagemAddCaracter++;
-      console.log(contagemAddCaracter);
-      if (travaCaracter == true) {
-        output1.innerHTML = "";
-        output2.innerHTML = "";
-        output2.innerHTML += x;
-        travaCaracter = false;
-        console.log(travaCaracter);
-      } else {
-        output2.value += x;
-        console.log(travaCaracter);
-      }
-    } else {
-      output1.innerHTML = "";
-      output2.innerHTML = "";
-      output2.innerHTML += x;
+    if (travaCaracter == true) {
+      output1.value = "";
+      output2.value = "";
+      output2.value += x;
       travaCaracter = false;
-      contagemAddCaracter = 0;
-      console.log(contagemAddCaracter);
-      console.log(travaCaracter);
+      console.log(travaCaracter + " :trava caracter");
+    } else {
+      output2.value += x;
+      console.log(travaCaracter + " :trava caracter");
     }
   }
 
   function sinal(a) {
-    console.log(output1.innerHTML.length);
-    if (output1.innerHTML.length > 100) {
-      output1.style.fontSize = "50px";
+    if (a == "%") {
       if (contador == 0) {
-        output1.innerHTML = output2.innerHTML + a;
-        output2.innerHTML = "";
+        porce = Number(output2.value);
+        output1.value = output2.value + a;
+        output2.value = "";
         contador++;
         console.log(contador + "contador");
         travaCaracter = false;
-        console.log(travaCaracter);
+        trava_porce = true;
+        console.log(travaCaracter + " :trava caracter");
+        console.log(trava_porce + " :trava porcentagem");
       } else {
-        let res = eval(output1.innerHTML + output2.innerHTML);
-        output1.innerHTML = res + a;
-        output2.innerHTML = "";
+        let res = eval(output1.value + output2.value);
+        porce = Number(res);
+        output1.value = res + a;
+        output2.value = "";
         travaCaracter = false;
-        console.log(travaCaracter);
+        trava_porce = true;
+        console.log(travaCaracter + " :trava caracter");
+        console.log(trava_porce + " :trava porcentagem");
       }
     } else {
-      if (contador == 0) {
-        output1.innerHTML = output2.innerHTML + a;
-        output2.innerHTML = "";
-        contador++;
-        console.log(contador + "contador");
+      if (trava_porce == true) {
+        let valor_porce = (porce * Number(output2.value)) / 100;
+        output1.value = valor_porce + a;
+        output2.value = "";
         travaCaracter = false;
-        console.log(travaCaracter);
+        trava_porce = false;
+        console.log(travaCaracter + " :trava caracter");
+        console.log(trava_porce + " :trava porcentagem");
       } else {
-        let res = eval(output1.innerHTML + output2.innerHTML);
-        output1.innerHTML = res + a;
-        output2.innerHTML = "";
-        travaCaracter = false;
-        console.log(travaCaracter);
+        if (contador == 0) {
+          output1.value = output2.value + a;
+          output2.value = "";
+          contador++;
+          console.log(contador + "contador");
+          travaCaracter = false;
+          console.log(travaCaracter + " :trava caracter");
+        } else {
+          let res = eval(output1.value + output2.value);
+          output1.value = res + a;
+          output2.value = "";
+          travaCaracter = false;
+          console.log(travaCaracter + " :trava caracter");
+        }
       }
     }
   }
@@ -194,23 +196,34 @@ function pagina_home() {
     output2.value = "";
     console.log("apagar tudo da tela");
     contador = 0;
+    trava_porce = false;
+    travaCaracter = false;
+    porce = 0;
   }
 
   function apagarCaracter() {
-    output2.innerHTML = output2.innerHTML.substring(
-      0,
-      output2.innerHTML.length - 1
-    );
+    output2.value = output2.value.substring(0, output2.value.length - 1);
     console.log("apagar caracter");
   }
 
   function calcular() {
-    let res = output1.innerHTML + output2.innerHTML;
-    output1.innerHTML = res;
-    output2.innerHTML = eval(res);
-    contador = 0;
-    travaCaracter = true;
-    console.log(travaCaracter);
+    if (trava_porce == true) {
+      let res = (porce * Number(output2.value)) / 100;
+      output1.value = output1.value+output2.value;
+      output2.value = res;
+      contador = 0;
+      travaCaracter = true;
+      console.log(travaCaracter + " :trava caracter");
+      trava_porce = false;
+      console.log(trava_porce + " :trava porcentagem");
+    }else{
+      let res = output1.value + output2.value;
+      output1.value = res;
+      output2.value = eval(res);
+      contador = 0;
+      travaCaracter = true;
+      console.log(travaCaracter + " :trava caracter");
+    }
   }
 
   //corpo do app
